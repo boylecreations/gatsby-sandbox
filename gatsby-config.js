@@ -1,3 +1,4 @@
+/* Initial Snippet  ---------------------------- 
 module.exports = {
   plugins: [
     {
@@ -6,5 +7,23 @@ module.exports = {
         tailwindConfig: `tailwind.config.js`
       }
     }
+  ]
+};
+------------------------------------------------ */
+
+/* Initial Snippet  ---------------------------- */
+
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: `http://reliance-ccp.local/graphql`,
+        tailwindConfig: `tailwind.config.js`
+      }
+    },
+    `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`
   ]
 };
