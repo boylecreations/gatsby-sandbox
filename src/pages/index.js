@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { Link, graphql } from "gatsby";
+
 import Button from '../components/Button';
 import Card from '../components/Card';
 import CustomerCard from '../components/CustomerCard';
@@ -9,9 +12,22 @@ import StatsBox from '../components/StatsBox';
 import customerData from '../data/customer-data';
 import HeroImage from '../svg/HeroImage';
 import SvgCharts from '../svg/SvgCharts';
+import AllPosts from '../components/AllPosts';
 
-const Index = () => (
+const Index = ({ data }) => (
   <Layout>
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="lg:text-center">
+            <h2 class="text-base text-4xl text-indigo-600 font-semibold tracking-wide uppercase">
+              Posts:
+            </h2>
+            { data.allWpPost.edges.map( ({ node }) => (
+                <AllPosts post={node} />
+              ))}
+          </div>
+        </div>
+      </section>
     <section className="pt-20 md:pt-40">
       <div className="container mx-auto px-8 lg:flex">
         <div className="text-center lg:text-left lg:w-1/2">

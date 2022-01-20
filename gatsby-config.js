@@ -14,6 +14,9 @@ module.exports = {
 /* Initial Snippet  ---------------------------- */
 
 module.exports = {
+  siteMetadata: {
+    title: "MyHeadlessWordPress",
+  },
   plugins: [
     {
       resolve: `gatsby-source-wordpress`,
@@ -24,6 +27,7 @@ module.exports = {
     },
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-postcss`
   ]
 };
